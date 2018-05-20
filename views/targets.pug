@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  h1 Targets
+  div
+  each target in targets
+    form(action="/targets/save")
+      caption= target.name
+
+      label(for="name") Name
+      input#(type="text", name="name", value=target.name)
+    
+      label(for="address")
+      input#(type="text", name="address", value=target.address)
+
+      fieldset
+        legend Meta information
+        
+        label(for="visits")
+        input#(type="number", name="visits", value=target.visits)
+
+        label(for="visited_at")
+        input#(type="date", name="visited_at", value=target.visited_at)
+
+        label(for="interval")
+        input#(type="text", name="interval", value=target.interval)
+      button(type="submit") Save
+  div      
+    form(action="/targets/save")    
+      caption New target
+
+      label(for="name") Name
+      input#(type="text", name="name", value=target.name)
+    
+      label(for="address")
+      input#(type="text", name="address", value=target.address)
+
+      fieldset
+        legend Meta information
+        
+        label(for="visits")
+        input#(type="number", name="visits", value=target.visits)
+
+        label(for="visited_at")
+        input#(type="date", name="visited_at", value=target.visited_at)
+
+        label(for="interval")
+        input#(type="text", name="interval", value=target.interval)
+      button(type="submit") Save
+        
